@@ -4,11 +4,12 @@ from app import csrf
 import time
 import os
 
-from forms import ContactForm
+from forms import EmailForm
 from flask_mail import Message
 from flask_mail import Mail
 mail = Mail(app)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    form = EmailForm()
+    return render_template("index.html", form=form)

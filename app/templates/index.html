@@ -19,11 +19,48 @@
 <title>H weds A &bull; 2017</title>
 </head>
 <body>
-    <div class="site-container">
-        <div class="logo animated fadeInUp"></div>
-        <a href="#" class="animated fadeInDown">
-          <div class="rsvp"></div>
-        </a>
+<div id="site-container">
+    <div class="logo animated fadeInUp"></div>
+    <a href="#" class="animated fadeInDown">
+        <div id="rsvp" class="btn"></div>
+    </a>
+    <div id="rsvp-form" class="card hide">
+        {% macro render_field(field) %}
+            {{ field.label }}
+            {{ field(**kwargs)|safe }}
+        {% endmacro %}
+        <form method="POST" action="" name="email-form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            {{ render_field(form.name, required='required') }}
+            {{ render_field(form.email, required='required') }}
+            <div class="events">
+                <label for="Attending">Attending</label>
+                <div class="event">{{ render_field(form.baraat, required='required') }}
+                {{ render_field(form.walima, required='required') }}</div>
+            </div>
+            {{ render_field(form.numguests, required='required') }}
+            <input id="submit" class="btn" type="submit" value="Confirm">
+        </form>
+
     </div>
+    <div id="close-btn" class="hide">
+        <i class="material-icons md-36">close</i>
+    </div>
+</div>
+<script src="/static/js/jquery.js"></script>
+<script>
+$(document).ready(function () {
+    var rsvpButton = document.getElementById('rsvp');
+    var closeButton = document.getElementById('close-btn');
+    rsvpButton.onclick = function () {
+        $('#site-container > .logo, #site-container > a').addClass('hide');
+        $('#site-container > #rsvp-form, #close-btn').removeClass('hide').addClass('animated fadeInUp');
+    };
+    closeButton.onclick = function () {
+        $('#site-container > .logo, #site-container > a').removeClass('hide');
+        $('#site-container > #rsvp-form, #close-btn').addClass('hide').removeClass('animated fadeInUp');
+    };
+});
+</script>
 </body>
 </html>
