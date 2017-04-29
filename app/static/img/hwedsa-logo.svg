@@ -14,9 +14,8 @@
                 <path d="M20.2000122,34.1498525 L20.2000122,57 L40,57 L40,23.6220122 L20.2000122,34.1498525 Z M0.200012207,23.5388889 C0.12248513,22.7583268 0.513236187,21.966096 1.25233042,21.5731126 L39.970091,0.986514129 L40,1.04276486 L40,1 L60,1 L60,131 L40,131 L40,77 L20.2000122,77 L20.2000122,112 L4.19924217,112 C1.99052845,112 0.200012207,110.202216 0.200012207,108.002061 L0.200012207,23.5388889 Z" id="Combined-Shape"></path>
                 <path d="M12,102 L22.0068977,102 C24.2122272,102 26,103.7878 26,106.009763 L26,112 L12,112 L12,102 Z" id="Rectangle-2" transform="translate(19.000000, 107.000000) scale(1, -1) translate(-19.000000, -107.000000) "></path>
             </g>
-            <text id="2017" font-family="Sailec-Regular, Sailec" font-size="22" font-weight="normal" letter-spacing="2.20000005" fill="#FFD2BD">
-                <tspan x="38" y="157">201</tspan>
-                <tspan x="78.7440001" y="157" letter-spacing="2.42000008">7</tspan>
+            <text id="2017" font-family="-apple-system, Helvetica Neue, Roboto, Arial, sans-serif" font-size="22" font-weight="500" fill="#FFD2BD">
+                <tspan x="38" y="157" letter-spacing="1">2017</tspan>
             </text>
         </g>
     </g>
