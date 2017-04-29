@@ -1,0 +1,10 @@
+{% for success in get_flashed_messages(with_categories=true, category_filter=["success"]) %}
+<div id="message" class="visible">
+    <p>{{ success[1] }}</p>
+</div>
+{% endfor %}
+{% for error in get_flashed_messages(with_categories=true, category_filter=["error"]) %}
+<div id="message" class="visible">
+    <p>{{ error[1] }}</p>
+</div>
+{% endfor %}

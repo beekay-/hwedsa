@@ -209,12 +209,20 @@ html, body {
     width: 100%;
     margin-top: 20px;
     margin-bottom: 0;
-    transition: box-shadow 0.2s ease;
+    /*transition: box-shadow 0.2s;*/
+}
+
+#message {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.3;
 }
 
 #site-container .card input[type='submit']:hover {
     box-shadow: 0 0 14px 2px rgba(255, 255, 255, 0.25);
-    transition: box-shadow 0.2s ease;
+    /*transition: box-shadow 0.2s;*/
 }
 
 .hide {
