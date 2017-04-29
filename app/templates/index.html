@@ -20,6 +20,7 @@
 </head>
 <body>
 <div id="site-container">
+    {% include "error-messages.html" %}
     <div class="logo animated fadeInUp"></div>
     <a href="#" class="animated fadeInDown">
         <div id="rsvp" class="btn"></div>
@@ -29,14 +30,16 @@
             {{ field.label }}
             {{ field(**kwargs)|safe }}
         {% endmacro %}
-        <form method="POST" action="" name="email-form">
+        <form method="POST" action="{{ url_for('sendConfirmation') }}" name="email-form">
             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             {{ render_field(form.name, required='required') }}
             {{ render_field(form.email, required='required') }}
             <div class="events">
                 <label for="Attending">Attending</label>
-                <div class="event">{{ render_field(form.baraat, required='required') }}
-                {{ render_field(form.walima, required='required') }}</div>
+                <div class="event">
+                    {{ render_field(form.baraat, value='Yes') }}
+                    {{ render_field(form.walima, value='Yes') }}
+                </div>
             </div>
             {{ render_field(form.numguests, required='required') }}
             <input id="submit" class="btn" type="submit" value="Confirm">
@@ -52,13 +55,15 @@
 $(document).ready(function () {
     var rsvpButton = document.getElementById('rsvp');
     var closeButton = document.getElementById('close-btn');
-    rsvpButton.onclick = function () {
+    rsvpButton.onclick = function (e) {
         $('#site-container > .logo, #site-container > a').addClass('hide');
         $('#site-container > #rsvp-form, #close-btn').removeClass('hide').addClass('animated fadeInUp');
+        e.preventDefault();
     };
-    closeButton.onclick = function () {
+    closeButton.onclick = function (e) {
         $('#site-container > .logo, #site-container > a').removeClass('hide');
         $('#site-container > #rsvp-form, #close-btn').addClass('hide').removeClass('animated fadeInUp');
+        e.preventDefault();
     };
 });
 </script>
