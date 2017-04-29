@@ -44,7 +44,10 @@
                 </div>
             </div>
             <label>Total Number of Guests</label>
-            {{ render_field(form.numguests, required='required') }}
+            <div class="custom-select">
+                {{ render_field(form.numguests, required='required') }}
+                <span class="arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+            </div>
             <input id="submit" class="btn" type="submit" value="Confirm">
         </form>
     </div>
