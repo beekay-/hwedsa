@@ -159,10 +159,34 @@ html, body {
     -webkit-appearance: none;
 }
 
-#site-container .card input[type='checkbox'] {
+#site-container .card .events input[type='checkbox'] {
     width: 25%;
     margin-bottom: 0;
     margin-top: 0;
+    vertical-align: middle;
+    display: none;
+}
+
+#site-container .card .events input[type="checkbox"]+label {
+    cursor: pointer;
+    font-weight: 400;
+}
+
+#site-container .card .events input[type="checkbox"]+label:after {
+    content: '\E835';
+    display: inline-block;
+    font-family: 'Material Icons';
+    font-size: 24px;
+    font-size: 400;
+    text-align: center;
+    position: relative;
+    top: -1px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+#site-container .card .events input[type="checkbox"]:checked + label:after {
+    content: '\E834';
 }
 
 #site-container .card .events {

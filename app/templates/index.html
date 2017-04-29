@@ -26,24 +26,27 @@
     </a>
     <div id="rsvp-form" class="card hide">
         {% macro render_field(field) %}
-            {{ field.label }}
             {{ field(**kwargs)|safe }}
         {% endmacro %}
         <form method="POST" action="{{ url_for('sendConfirmation') }}" name="email-form">
             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <label for="Name">Name</label>
             {{ render_field(form.name, required='required') }}
+            <label for="Email">Email</label>
             {{ render_field(form.email, required='required') }}
             <div class="events">
                 <label for="Attending">Attending</label>
                 <div class="event">
                     {{ render_field(form.baraat, value='Yes') }}
+                    <label for="baraat">Baraat</label>
                     {{ render_field(form.walima, value='Yes') }}
+                    <label for="walima">Walima</label>
                 </div>
             </div>
+            <label>Total Number of Guests</label>
             {{ render_field(form.numguests, required='required') }}
             <input id="submit" class="btn" type="submit" value="Confirm">
         </form>
-
     </div>
     <div id="close-btn" class="hide">
         <i class="material-icons md-36">close</i>
