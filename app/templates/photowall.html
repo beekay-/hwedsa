@@ -22,11 +22,12 @@
 </head>
 <body>
 <div id="site-container" class="repeat">
-  {% if current_user.is_authenticated %}
+
   <div id="transparency">
       <div id="page-title">
           <h1>Photo Wall</h1>
           <h2>Join us at the photo booth station, or use hashtag <strong>#hwedsa</strong> on Instagram to add your pictures here</h2>
+          {% if current_user.is_authenticated %}
           <div id="gallery">
               {% for image in images %}
                   {% if image|string == '.DS_Store' %}
@@ -39,20 +40,20 @@
                   {% endif %}
               {% endfor %}
           </div>
+          {% endif %}
       </div>
-  {% endif %}
   </div>
 </div>
-<script src="/static/js/jquery.js"></script>
 <script src="/static/js/atvImg.js"></script>
+<script src="/static/js/jquery.js"></script>
 <script src="/static/js/simplebox.js"></script>
 <script>
+atvImg();
 $(document).ready(function () {
     $(".slb").simplebox({
       darkMode: true,
       fadeSpeed: 350
     });
-    atvImg();
 });
 </script>
 </body>
