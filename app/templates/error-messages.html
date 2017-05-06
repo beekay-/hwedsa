@@ -8,3 +8,8 @@
     <p>{{ error[1] }}</p>
 </div>
 {% endfor %}
+{% for error in get_flashed_messages(with_categories=true, category_filter=["password"]) %}
+<div id="message" class="visible">
+    <p>{{ error[1] }}</p>
+</div>
+{% endfor %}

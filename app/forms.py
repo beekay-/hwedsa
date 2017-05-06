@@ -9,3 +9,7 @@ class EmailForm(Form):
     baraat = BooleanField('Baraat')
     walima = BooleanField('Walima')
     numguests = SelectField('Total Number of Guests', choices=[('1','1'), ('2','2'), ('3', '3'), ('4', '4'), ('5', '5'), ('6', '6'), ('7', '7'),  ('8', '8')])
+
+class LoginForm(Form):
+    username = TextField('username', validators=[DataRequired()])
+    access_code = PasswordField('access_code', validators=[DataRequired()])

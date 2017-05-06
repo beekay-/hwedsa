@@ -342,7 +342,7 @@ html, body {
   margin-right: 10px;
 }
 
-#site-container .card input[type='submit'] {
+#site-container .card input[type='submit'], button#login {
   appearance: none;
   -webkit-appearance: none;
   font-family: inherit;
@@ -363,6 +363,11 @@ html, body {
   /*transition: box-shadow 0.2s;*/
 }
 
+button#login {
+  margin-top: 0;
+  border: 0;
+}
+
 #message {
   width: 50%;
   text-align: center;
@@ -370,9 +375,10 @@ html, body {
   padding: 20px;
   line-height: 1.3;
   font-size: 0.813em;
+  z-index: 2;
 }
 
-#site-container .card input[type='submit']:hover {
+#site-container .card input[type='submit']:hover, button#login:hover {
   box-shadow: 0 0 14px 2px rgba(255, 255, 255, 0.25);
   /*transition: box-shadow 0.2s;*/
 }
