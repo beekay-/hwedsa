@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="/static/css/simplebox.css">
+<link rel="stylesheet" href="/static/css/atvImg.css">
 <link rel="stylesheet" href="/static/css/style.css">
 <title>H weds A &bull; 2017 &ndash; Photo Wall</title>
 </head>
@@ -31,7 +32,10 @@
                   {% if image|string == '.DS_Store' %}
                   <!-- <p>Check back on July 08, 2017.</p> -->
                   {% else %}
-                      <img class="slb" src='/static/img/photowall/{{ image }}' alt="{{ image }}"/>
+                  <div class="atvImg slb" data-src="/static/img/photowall/{{ image }}">
+                      <img class="slb" src="/static/img/photowall/{{ image }}">
+                      <div class="atvImg-layer" data-img="/static/img/photowall/{{ image }}"></div>
+                  </div>
                   {% endif %}
               {% endfor %}
           </div>
@@ -40,13 +44,15 @@
   </div>
 </div>
 <script src="/static/js/jquery.js"></script>
-<script src="/static/js/simplebox.min.js"></script>
+<script src="/static/js/atvImg.js"></script>
+<script src="/static/js/simplebox.js"></script>
 <script>
 $(document).ready(function () {
     $(".slb").simplebox({
       darkMode: true,
       fadeSpeed: 350
     });
+    atvImg();
 });
 </script>
 </body>
