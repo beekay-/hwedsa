@@ -8,12 +8,14 @@
 <meta name="apple-mobile-web-app-title" content="H Weds A">
 <meta name="theme-color" content="#14203f">
 <meta name="csrf-token" content="{{ csrf_token() }}">
+<!-- <meta http-equiv="refresh" content="15; URL=/photowall"> -->
 <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 <link rel="apple-touch-icon-precomposed" href="/static/img/apple-touch-icon.png">
 <link rel="apple-touch-startup-image" href="" media="(device-width: 375px) and (device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" >
 <link rel="apple-touch-startup-image" href="" media="(device-width: 320px) and (device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="/static/css/simplebox.css">
 <link rel="stylesheet" href="/static/css/style.css">
 <title>H weds A &bull; 2017 &ndash; Photo Wall</title>
 </head>
@@ -25,11 +27,25 @@
           <h2>Join us at the photo booth station, or use hashtag <strong>#hwedsa</strong> on Instagram to add your pictures here</h2>
           <div id="gallery">
               {% for image in images %}
-              <img class="photo" src='/static/img/photowall/{{ image }}' alt="{{ image }}"/>
+                  {% if image|string == '.DS_Store' %}
+                  <!-- <p>Check back on July 08, 2017.</p> -->
+                  {% else %}
+                      <img class="slb" src='/static/img/photowall/{{ image }}' alt="{{ image }}"/>
+                  {% endif %}
               {% endfor %}
           </div>
       </div>
   </div>
 </div>
+<script src="/static/js/jquery.js"></script>
+<script src="/static/js/simplebox.min.js"></script>
+<script>
+$(document).ready(function () {
+    $(".slb").simplebox({
+      darkMode: true,
+      fadeSpeed: 350
+    });
+});
+</script>
 </body>
 </html>
