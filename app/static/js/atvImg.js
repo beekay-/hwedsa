@@ -180,7 +180,7 @@ function atvImg(){
 
 		//container transform
 		if(elem.firstChild.className.indexOf(' over') != -1){
-			imgCSS += ' scale3d(1.07,1.07,1.07)';
+			imgCSS += ' scale3d(1.12,1.12,1.12)';
 		}
 		elem.firstChild.style.transform = imgCSS;
 
