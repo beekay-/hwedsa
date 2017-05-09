@@ -4,3 +4,4 @@ config.py
 /app/static/img/*.psd
 /app/static/img/photowall
 /app/static/img/resized-images
+.static/img/cache/*
