@@ -22,7 +22,6 @@
 </head>
 <body>
 <div id="site-container" class="repeat">
-
   <div id="transparency">
       <div id="page-title">
           <h1>Photo Wall</h1>
@@ -35,8 +34,8 @@
                   <!-- <p>Check back on July 08, 2017.</p> -->
                   {% else %}
                   <div class="atvImg slb" data-src="/static/img/photowall/{{ image }}">
-                      <img class="slb" src="/static/img/photowall/{{ image }}">
-                      <div class="atvImg-layer" data-img="/static/img/photowall/{{ image }}"></div>
+                      <!-- <img class="slb" src="{{ resized_img_src(image, height=360, hi_dpi=2, hi_dpi_quality=75, quality=75) }}"> -->
+                      <div class="atvImg-layer" data-img="{{ resized_img_src(image, height=400, hi_dpi=2, hi_dpi_quality=70, quality=70) }}"></div>
                   </div>
                   {% endif %}
               {% endfor %}

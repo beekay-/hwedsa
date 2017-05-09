@@ -11,4 +11,9 @@ app.config.from_object("config")
 from flask_wtf.csrf import CsrfProtect
 csrf = CsrfProtect(app)
 
+from flask_images import Images
+app.config["IMAGES_PATH"] = ['static/img/photowall']
+# app.config["IMAGES_CACHE"] = '/static/cache'
+images = Images(app)
+
 from app import views
