@@ -40,7 +40,6 @@ table {
 
 html, body {
   background: #14203f;
-  background: #14203f;
   background: -moz-radial-gradient(center, ellipse cover, #243B55 0%, #14203f 100%);
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #243B55), color-stop(100%, #14203f));
   background: -webkit-radial-gradient(center, ellipse cover, #243B55 0%, #14203f 100%);
@@ -365,12 +364,16 @@ html, body {
   /*transition: box-shadow 0.2s;*/
 }
 
+button#login {
+  font-size: 0.813em;
+}
+
 a#logout {
-    text-align: center;
-    width: 80px;
-    font-size: 0.813em;
-    margin-top: 12px;
-    border: 0;
+  text-align: center;
+  width: 80px;
+  font-size: 0.813em;
+  margin-top: 12px;
+  border: 0;
 }
 
 button#login {
