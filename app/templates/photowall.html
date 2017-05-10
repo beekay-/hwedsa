@@ -16,7 +16,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="/static/css/simplebox.css">
-<link rel="stylesheet" href="/static/css/atvImg.css">
 <link rel="stylesheet" href="/static/css/style.css">
 <title>H weds A &bull; 2017 &ndash; Photo Wall</title>
 </head>
@@ -33,7 +32,7 @@
                   {% if image|string == '.DS_Store' %}
                   <!-- <p>Check back on July 08, 2017.</p> -->
                   {% else %}
-                  <img class="slb" src="{{ resized_img_src(image, height=360, hi_dpi=2, hi_dpi_quality=75, quality=75) }}" data-src="{{ resized_img_src(image, height=1000, hi_dpi=2, hi_dpi_quality=90, quality=90) }}">
+                  <img class="slb" data-src="{{ resized_img_src(image, height=360, hi_dpi=2, hi_dpi_quality=75, quality=75) }}" data-orig="{{ resized_img_src(image, height=1000, hi_dpi=2, hi_dpi_quality=90, quality=90) }}">
                   {% endif %}
               {% endfor %}
           </div>
@@ -41,15 +40,15 @@
       </div>
   </div>
 </div>
-<script src="/static/js/atvImg.js"></script>
 <script src="/static/js/jquery.js"></script>
 <script src="/static/js/simplebox.js"></script>
+<script src="/static/js/unveil.js"></script>
 <script>
-atvImg();
 $(document).ready(function () {
+    $("img").unveil();
     $(".slb").simplebox({
       darkMode: true,
-      fadeSpeed: 350
+      fadeSpeed: 250
     });
 });
 </script>

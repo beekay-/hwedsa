@@ -56,7 +56,7 @@
                 $body.css("overflow", "hidden");
 
                 var $this = $(this);
-                var imageSRC = $this.attr("data-src");
+                var imageSRC = $this.attr("data-orig");
                 $image.attr("src", imageSRC);
                 $image.css("max-height", "90%");
                 $image.addClass('pop-in');

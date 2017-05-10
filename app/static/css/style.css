@@ -204,11 +204,12 @@ html, body {
   transition: all 0.1s ease-out;
   object-fit: cover;
   cursor: pointer;
+  box-shadow: 0 1px 25px rgba(0, 0, 0, 0.25);
 }
 
 #site-container #gallery img:hover {
-  transform: scale3d(1.12,1.12,1.12);
-  box-shadow: 0 0 75px rgba(0, 0, 0, 0.5);
+  transform: scale3d(1.12, 1.12, 1.12);
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.65);
   transition: all 0.1s ease-out;
 }
 
