@@ -195,22 +195,22 @@ html, body {
   margin: 5px;
 }*/
 
-#site-container #gallery div.atvImg {
+#site-container #gallery img {
   /*width: 100%;*/
   width: calc(33.3332% - 20px);
   height: 196px;
   margin: 10px;
   border-radius: 3px;
-  /*transition: all 0.15s ease-in-out;*/
+  transition: all 0.1s ease-out;
   object-fit: cover;
   cursor: pointer;
 }
 
-/*#site-container #gallery img:hover {
-  transform: scale(1.25);
+#site-container #gallery img:hover {
+  transform: scale3d(1.12,1.12,1.12);
   box-shadow: 0 0 75px rgba(0, 0, 0, 0.5);
-  transition: all 0.15s ease-in-out;
-}*/
+  transition: all 0.1s ease-out;
+}
 
 #site-container strong {
   font-weight: 600;
@@ -483,13 +483,13 @@ button#login {
   #site-container #gallery {
     padding-top: 20px;
   }
-  #site-container #gallery div.atvImg {
+  #site-container #gallery img {
     height: 91px;
     width: calc(33% - 20px);
   }
 }
 @media screen and (max-width: 22.5em) {
-  #site-container #gallery div.atvImg {
+  #site-container #gallery img {
     height: 72px;
   }
 }
