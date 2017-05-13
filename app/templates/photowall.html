@@ -13,7 +13,7 @@
 <link rel="apple-touch-icon-precomposed" href="/static/img/apple-touch-icon.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="/static/css/simplebox.css">
+<link rel="stylesheet" href="/static/css/fancybox.css">
 <link rel="stylesheet" href="/static/css/style.css">
 <title>H weds A &bull; 2017 &ndash; Photo Wall</title>
 </head>
@@ -22,7 +22,7 @@
   <div id="transparency">
       <div id="page-title">
           <h1>Photo Wall</h1>
-          <h2>Join us at the photo booth, or use <strong>#hwedsa</strong> on Instagram to add your pictures here</h2>
+          <h2>Join us at the photobooth to see your pictures here.</h2>
           {% if current_user.is_authenticated %}
           <a id="logout" href="{{ url_for('logout') }}">Logout</a>
           <div id="gallery">
@@ -30,7 +30,7 @@
                   {% if image|string == '.DS_Store' %}
                   <!-- <p>Check back on July 08, 2017.</p> -->
                   {% else %}
-                  <img class="slb" data-src="{{ resized_img_src(image, height=360, hi_dpi=2, hi_dpi_quality=75, quality=75) }}" data-orig="{{ resized_img_src(image, height=1000, hi_dpi=2, hi_dpi_quality=90, quality=90) }}">
+                  <img data-src="{{ resized_img_src(image, height=1000, hi_dpi=2, hi_dpi_quality=75, quality=75) }}" data-thumb="{{ resized_img_src(image, height=360, hi_dpi=2, hi_dpi_quality=60, quality=60) }}" data-fancybox="photo">
                   {% endif %}
               {% endfor %}
           </div>
@@ -39,14 +39,17 @@
   </div>
 </div>
 <script src="/static/js/jquery.js"></script>
-<script src="/static/js/simplebox.js"></script>
+<script src="/static/js/fancybox.js"></script>
 <script src="/static/js/unveil.js"></script>
 <script>
 $(document).ready(function () {
     $("img").unveil();
-    $(".slb").simplebox({
-      darkMode: true,
-      fadeSpeed: 250
+    $("[data-fancybox]").fancybox({
+        speed: 200,
+        loop: true,
+        slideShow: false,
+        thumbs: false,
+        fullScreen: false
     });
 });
 </script>

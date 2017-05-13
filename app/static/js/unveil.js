@@ -21,7 +21,7 @@
 
     this.one("unveil", function() {
       var source = this.getAttribute(attrib);
-      source = source || this.getAttribute("data-src");
+      source = source || this.getAttribute("data-thumb");
       if (source) {
         this.setAttribute("src", source);
         if (typeof callback === "function") callback.call(this);

@@ -132,12 +132,14 @@ html, body {
   font-weight: 600;
   width: 100%;
   text-align: center;
+  color: #FFD2BD;
 }
 
 #site-container h2 {
   font-size: 0.875em;
   text-align: center;
   line-height: 1.3;
+  width: 100%;
 }
 
 #site-container #transparency {
@@ -212,10 +214,10 @@ html, body {
   transition: all 0.1s ease-out;
 }
 
-#site-container strong {
+/*#site-container strong {
   font-weight: 600;
   color: #FFD2BD;
-}
+}*/
 
 #site-container .card {
   background: #17253a;
@@ -490,6 +492,9 @@ button#login {
   #site-container #gallery img {
     height: 91px;
     width: calc(33% - 20px);
+  }
+  #site-container h2 {
+    font-size: 0.750em;
   }
 }
 @media screen and (max-width: 22.5em) {
