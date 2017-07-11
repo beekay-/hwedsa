@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-title" content="H Weds A">
 <meta name="theme-color" content="#14203f">
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<!-- <meta http-equiv="refresh" content="15; URL=/photowall"> -->
+<!-- <meta http-equiv="refresh" content="20; URL=/photowall"> -->
 <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 <link rel="apple-touch-icon-precomposed" href="/static/img/apple-touch-icon.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600">
@@ -50,6 +50,24 @@ $(document).ready(function () {
         slideShow: false,
         thumbs: false,
         fullScreen: false
+    });
+    // Create template for download button
+    $.fancybox.defaults.btnTpl.download = '<a download class="fancybox-button fancybox-download"></a>';
+
+    // Choose what buttons to display by default
+    $.fancybox.defaults.buttons = [
+      // 'slideShow',
+      // 'fullScreen',
+      // 'thumbs',
+      'download',
+      'close'
+    ];
+
+    // Update download link source
+    $( '[data-fancybox]' ).fancybox({
+      beforeShow : function( instance, current ) {
+        $('.fancybox-download').attr('href', current.src);
+      }
     });
 });
 </script>
